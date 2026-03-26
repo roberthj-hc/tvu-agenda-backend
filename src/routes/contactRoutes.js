@@ -1,7 +1,7 @@
 import express from "express";
 import {
  getContacts,
- getContact,
+ //getContact,
  createContactController,
  updateContactController,
  deactivateContactController,
@@ -16,7 +16,7 @@ const router = express.Router();
 
 // CRUD contactos
 router.get("/", getContacts);                  // GET /api/contacts
-router.get("/:id", getContact);                // GET /api/contacts/:id
+//router.get("/:id", getContact);                // GET /api/contacts/:id
 router.post("/", createContactController);    // POST /api/contacts
 router.put("/:id", updateContactController);  // PUT /api/contacts/:id
 router.patch("/deactivate/:id", deactivateContactController); // PATCH /api/contacts/deactivate/:id

@@ -57,7 +57,7 @@ export const deleteRoleController = async (req, res, next) => {
     const { id } = req.params;
 
     // Validar si hay usuarios asociados a este rol antes de eliminar
-    const usersResult = await req.app.locals.pool.query(
+    const usersResult = await pool.query(
       "SELECT * FROM users WHERE id_role=$1",
       [id]
     );

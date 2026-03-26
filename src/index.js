@@ -6,8 +6,6 @@ import dotenv from "dotenv";
 import roleRoutes from "./routes/roleRoutes.js";
 //import authRoutes from "./routes/authRoutes.js";
 import userRoutes from "./routes/userRoutes.js";
-import personRoutes from "./routes/personRoutes.js";
-import institutionRoutes from "./routes/institutionRoutes.js";
 import contactRoutes from "./routes/contactRoutes.js";
 import phoneRoutes from "./routes/phoneRoutes.js";
 
@@ -24,8 +22,6 @@ app.use(express.json());
 app.use("/api/roles", roleRoutes);
 //app.use("/api/auth", authRoutes);
 app.use("/api/users", userRoutes);
-app.use("/api/persons", personRoutes);
-app.use("/api/institutions", institutionRoutes);
 app.use("/api/contacts", contactRoutes);
 app.use("/api/phones", phoneRoutes);
 
@@ -46,7 +42,15 @@ app.listen(PORT, '0.0.0.0', () => {
 });
 
 
-
-
 // cambios en package.json
 //type : commonjs
+
+// crear usuario -> 
+/*
+ROLE: role_id, role       ->       roles establecidos: admin [1], user [2] (default)
+USER: user_id, role_id, name, lastname, ci, password_hash, expiration_date, is_active
+CONTACT: contact_id, phone_id, name, institution, position, registration_date, is_active
+PHONE: phone_id, id_person, phone
+
+user default false, el admin los activa y define el tiempo de uso
+*/
