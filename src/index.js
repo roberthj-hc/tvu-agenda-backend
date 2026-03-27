@@ -4,7 +4,7 @@ import cors from "cors";
 import dotenv from "dotenv";
 
 import roleRoutes from "./routes/roleRoutes.js";
-//import authRoutes from "./routes/authRoutes.js";
+import authRoutes from "./routes/authRoutes.js";
 import userRoutes from "./routes/userRoutes.js";
 import contactRoutes from "./routes/contactRoutes.js";
 import phoneRoutes from "./routes/phoneRoutes.js";
@@ -20,7 +20,7 @@ app.use(express.json());
 
 // Routes
 app.use("/api/roles", roleRoutes);
-//app.use("/api/auth", authRoutes);
+app.use("/api/auth", authRoutes);
 app.use("/api/users", userRoutes);
 app.use("/api/contacts", contactRoutes);
 app.use("/api/phones", phoneRoutes);
